@@ -30,6 +30,10 @@ allow cameraserver surfaceflinger_service:service_manager find;
 
 allow cameraserver hidl_token_hwservice:hwservice_manager find;
 
+# Allow cameraserver to call Xiaomi motor HAL
+allow cameraserver hal_motor_hwservice:hwservice_manager find;
+binder_call(cameraserver, hal_motor_default)
+
 ###
 ### neverallow rules
 ###

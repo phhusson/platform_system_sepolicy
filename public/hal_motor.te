@@ -1,0 +1,5 @@
+# HwBinder IPC from client to server
+binder_call(hal_motor_client, hal_motor_server)
+
+add_hwservice(hal_motor_server, hal_motor_hwservice)
+allow hal_motor_client hal_motor_hwservice:hwservice_manager find;
