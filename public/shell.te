@@ -199,6 +199,11 @@ allow shell sepolicy_file:file r_file_perms;
 # Allow shell to start up vendor shell
 allow shell vendor_shell_exec:file rx_file_perms;
 
+# Allow shell to run xiaomi-motor
+allow shell xiaomi_motor_exec:file rx_file_perms;
+allow shell hal_motor_hwservice:hwservice_manager find;
+binder_call(shell, hal_motor_default)
+
 ###
 ### Neverallow rules
 ###

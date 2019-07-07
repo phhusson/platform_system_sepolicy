@@ -492,6 +492,11 @@ allow init vendor_shell_exec:file execute;
 allow init vold_metadata_file:dir create_dir_perms;
 allow init vold_metadata_file:file getattr;
 
+# Allow init to run xiaomi-motor
+allow init xiaomi_motor_exec:file rx_file_perms;
+allow init hal_motor_hwservice:hwservice_manager find;
+binder_call(init, hal_motor_default)
+
 ###
 ### neverallow rules
 ###
